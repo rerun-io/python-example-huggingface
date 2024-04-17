@@ -1,4 +1,6 @@
-# Rerun visualization for LeRobot
+# Rerun visualization of HuggingFace datasets
+Tested with LeRobot datasets:
+
 * https://huggingface.co/lerobot
 * https://huggingface.co/datasets/lerobot/pusht
 

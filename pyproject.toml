@@ -21,7 +21,7 @@ extend-exclude = [
 ]
 
 lint.ignore = [
-    # Missing docstring in public function - TODO(emilk): enable for SDK but not for examples
+    # Missing docstring in public function/class
     "D1",
 
     # No blank lines allowed after function docstring.

@@ -1,36 +1,16 @@
-# Rerun template repository
-Template for our private and public repos, containing CI, CoC, etc
+# Rerun visualization for LeRobot
+* https://huggingface.co/lerobot
+* https://huggingface.co/datasets/lerobot/pusht
 
-When creating a new Rerun repository, use this as a template, then modify it as it makes sense.
+https://github.com/rerun-io/python-example-lerobot/assets/1148717/7e1bd3ea-376a-492d-814d-7384dfbe0128
 
-This template should be the default for any repository of any kind, including:
-* Rust projects
-* C++ projects
-* Python projects
-* Other stuff
+## Getting started
+Requires Python 3.10 or higher.
 
-This template includes
-* License files
-* Code of Conduct
-* Helpers for checking and linting Rust code
-  - `cargo-cranky`
-  - `cargo-deny`
-  - `rust-toolchain`
-* CI for:
-  - Spell checking
-  - Link checking
-  - Rust checks
+```sh
+pip install -r requirements.txt
+python main.py
+```
 
-
-## How to use
-Start by clicking "Use this template" at https://github.com/rerun-io/rerun_template/ or follow [these instructions](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
-
-Then follow these steps:
-* Search and replace `rerun_template` with the name of the repository
-* Run `scripts/template_update.py init --languages cpp,rust,python` to delete files you don't need (give the languages you need support for)
-* Search for `TODO` and fill in all those places
-* Replace this `README.md` with something better
-* Commit!
-
-In the future you can always update this repository with the latest changes from the template by running:
-* `scripts/template_update.py update --languages cpp,rust,python`
+## Note for the maintainer
+You can update this repository with the latest changes from https://github.com/rerun-io/rerun_template by running `scripts/template_update.py update --languages python`.

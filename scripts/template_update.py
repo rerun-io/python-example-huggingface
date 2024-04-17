@@ -4,7 +4,7 @@
 """
 The script has two purposes.
 
-After using `rerun_template` as a template, run this to clean out things you don't need.
+After using `rerun_example_lerobot` as a template, run this to clean out things you don't need.
 Use `scripts/template_update.py init --languages cpp,rust,python` for this.
 
 Update an existing repository with the latest changes from the template.
@@ -108,7 +108,7 @@ def update(languages: set[str], dry_run: bool) -> None:
     repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
     with tempfile.TemporaryDirectory() as temp_dir:
-        Repo.clone_from("https://github.com/rerun-io/rerun_template.git", temp_dir)
+        Repo.clone_from("https://github.com/rerun-io/python-example-lerobot.git", temp_dir)
         for root, dirs, files in os.walk(temp_dir):
             for file in files:
                 src_path = os.path.join(root, file)

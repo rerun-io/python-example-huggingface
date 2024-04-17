@@ -71,7 +71,7 @@ def main():
     print("Loading dataset…")
     dataset = load_dataset(args.dataset, split="train")
 
-    print("Selecting episode {args.episode_id}…")
+    print(f"Selecting episode {args.episode_id}…")
     ds_subset = dataset.filter(lambda frame: frame["episode_id"] == args.episode_id)
 
     print("Starting Rerun…")

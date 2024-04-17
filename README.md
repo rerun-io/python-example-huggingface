@@ -4,7 +4,8 @@ Tested with LeRobot datasets:
 * https://huggingface.co/lerobot
 * https://huggingface.co/datasets/lerobot/pusht
 
-https://github.com/rerun-io/python-example-lerobot/assets/1148717/7e1bd3ea-376a-492d-814d-7384dfbe0128
+https://github.com/rerun-io/python-example-lerobot/assets/1148717/19e9983c-531f-4c48-9b37-37c5cbe1e0bd
+
 
 ## Getting started
 Requires Python 3.10 or higher.

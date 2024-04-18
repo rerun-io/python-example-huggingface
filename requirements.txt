@@ -3,3 +3,4 @@ h5py
 pillow
 rerun-sdk>=0.15.0,<0.16.0
 tqdm
+webdataset

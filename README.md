@@ -1,5 +1,7 @@
 # Rerun visualization of HuggingFace datasets
-Tested with LeRobot datasets:
+Visualize HuggingFace datasets using [Rerun](https://www.rerun.io/).
+
+Originally built for the LeRobot datasets:
 
 * https://huggingface.co/lerobot
 * https://huggingface.co/datasets/lerobot/pusht
@@ -12,10 +14,10 @@ Requires Python 3.10 or higher.
 
 ```sh
 pip install -r requirements.txt
-python main.py
+python main.py --dataset lerobot/aloha_sim_insertion_human
 ```
 
-Example datasets to explore (use `python main.py --dataset`):
+Example datasets to explore:
 * `lerobot/aloha_sim_insertion_human`
 * `lerobot/aloha_sim_insertion_scripted`
 * `lerobot/aloha_sim_transfer_cube_human`

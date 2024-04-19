@@ -79,7 +79,7 @@ def main():
     ds_subset = dataset.filter(lambda frame: "episode_id" not in frame or frame["episode_id"] == args.episode_id)
 
     print("Starting Rerun…")
-    rr.init(f"rerun_example_lerobot {args.dataset}", spawn=True)
+    rr.init(f"rerun_example_huggingface {args.dataset}", spawn=True)
 
     print("Logging to Rerun…")
     log_dataset_to_rerun(ds_subset)

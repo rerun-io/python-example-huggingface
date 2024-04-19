@@ -36,10 +36,10 @@ def to_rerun(column_name: str, value: Any) -> Any:
 
 
 def log_dataset_to_rerun(dataset) -> None:
-    # Special time-like columns
+    # Special time-like columns for LeRobot datasets (https://huggingface.co/datasets/lerobot/):
     TIME_LIKE = {"index", "frame_id", "timestamp"}
 
-    # Ignore these columns
+    # Ignore these columns (again, LeRobot-specific):
     IGNORE = {"episode_data_index_from", "episode_data_index_to", "episode_id"}
 
     for row in tqdm(dataset):

@@ -9,7 +9,6 @@ pinned: false
 license: mit
 ---
 
-
 # Rerun visualization of HuggingFace datasets
 Visualize HuggingFace datasets using [Rerun](https://www.rerun.io/).
 
@@ -20,8 +19,9 @@ Originally built for the LeRobot datasets:
 
 https://github.com/rerun-io/python-example-lerobot/assets/1148717/19e9983c-531f-4c48-9b37-37c5cbe1e0bd
 
+Deployed live on hugging-face: https://huggingface.co/spaces/rerun/preview_dataset
 
-## Getting started
+## Getting started (native)
 Requires Python 3.10 or higher.
 
 ```sh
@@ -29,7 +29,13 @@ pip install -r requirements.txt
 python main.py --dataset lerobot/aloha_sim_insertion_human
 ```
 
-Example datasets to explore:
+## Getting started (gradio)
+```sh
+pip install -r requirements.txt
+uvicorn app:app --reload
+
+```
+## Example datasets to explore:
 * `lerobot/aloha_sim_insertion_human`
 * `lerobot/aloha_sim_insertion_scripted`
 * `lerobot/aloha_sim_transfer_cube_human`

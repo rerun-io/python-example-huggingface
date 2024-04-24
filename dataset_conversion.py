@@ -3,7 +3,6 @@ from typing import Any
 
 import numpy as np
 import rerun as rr
-from datasets import load_dataset
 from PIL import Image
 from tqdm import tqdm
 

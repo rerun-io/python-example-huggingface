@@ -1,18 +1,14 @@
-from pathlib import Path
 import urllib
-from collections import namedtuple
-from math import cos, sin
-from typing import Any
+from pathlib import Path
 
 import gradio as gr
-import numpy as np
-from dataset_conversion import log_dataset_to_rerun
 import rerun as rr
-import rerun.blueprint as rrb
 from datasets import load_dataset
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from gradio_huggingfacehub_search import HuggingfaceHubSearch
+
+from dataset_conversion import log_dataset_to_rerun
 
 CUSTOM_PATH = "/"
 

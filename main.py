@@ -27,7 +27,7 @@ def main() -> None:
     dataset = load_dataset(args.dataset, split="train", streaming=True)
 
     # This is for LeRobot datasets (https://huggingface.co/lerobot):
-    ds_subset = dataset.filter(lambda frame: "episode_id" not in frame or frame["episode_id"] == args.episode_id)
+    ds_subset = dataset.filter(lambda frame: "episode_index" not in frame or frame["episode_index"] == args.episode_id)
 
     print("Starting Rerun…")
     rr.init(f"rerun_example_huggingface {args.dataset}", spawn=True)

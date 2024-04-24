@@ -33,11 +33,11 @@ def html_template(rrd: str, app_url: str = "https://app.rerun.io") -> str:
     return f"""<div style="width:100%; height:70vh;"><iframe style="width:100%; height:100%;" src="{app_url}?url={encoded_url}" frameborder="0" allowfullscreen=""></iframe></div>"""
 
 
-def show_dataset(dataset_id: str, episode_id: int) -> str:
+def show_dataset(dataset_id: str, episode_index: int) -> str:
     rr.init("dataset")
 
     # TODO(jleibs): manage cache better and put in proper storage
-    filename = Path(f"tmp/{dataset_id}_{episode_id}.rrd")
+    filename = Path(f"tmp/{dataset_id}_{episode_index}.rrd")
     if not filename.exists():
         filename.parent.mkdir(parents=True, exist_ok=True)
 
@@ -46,7 +46,9 @@ def show_dataset(dataset_id: str, episode_id: int) -> str:
         dataset = load_dataset(dataset_id, split="train", streaming=True)
 
         # This is for LeRobot datasets (https://huggingface.co/lerobot):
-        ds_subset = dataset.filter(lambda frame: "episode_index" not in frame or frame["episode_index"] == episode_id)
+        ds_subset = dataset.filter(
+            lambda frame: "episode_index" not in frame or frame["episode_index"] == episode_index
+        )
 
         log_dataset_to_rerun(ds_subset)
 
@@ -61,14 +63,14 @@ with gr.Blocks() as demo:
             placeholder="Search for models on Huggingface",
             search_type="dataset",
         )
-        episode_id = gr.Number(1, label="Episode ID")
+        episode_index = gr.Number(1, label="Episode Index")
         button = gr.Button("Show Dataset")
     with gr.Row():
         rrd = gr.File()
     with gr.Row():
         viewer = gr.HTML()
 
-    button.click(show_dataset, inputs=[search_in, episode_id], outputs=rrd)
+    button.click(show_dataset, inputs=[search_in, episode_index], outputs=rrd)
     rrd.change(
         html_template,
         js="""(rrd) => { console.log(rrd.url); return rrd.url}""",

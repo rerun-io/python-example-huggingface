@@ -20,14 +20,16 @@ def main() -> None:
 
     parser = argparse.ArgumentParser(description="Log a HuggingFace dataset to Rerun.")
     parser.add_argument("--dataset", default="lerobot/pusht", help="The name of the dataset to load")
-    parser.add_argument("--episode-id", default=1, help="Which episode to select")
+    parser.add_argument("--episode-index", default=1, help="Which episode to select")
     args = parser.parse_args()
 
     print("Loading dataset…")
     dataset = load_dataset(args.dataset, split="train", streaming=True)
 
     # This is for LeRobot datasets (https://huggingface.co/lerobot):
-    ds_subset = dataset.filter(lambda frame: "episode_index" not in frame or frame["episode_index"] == args.episode_id)
+    ds_subset = dataset.filter(
+        lambda frame: "episode_index" not in frame or frame["episode_index"] == args.episode_index
+    )
 
     print("Starting Rerun…")
     rr.init(f"rerun_example_huggingface {args.dataset}", spawn=True)

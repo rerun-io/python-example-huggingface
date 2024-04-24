@@ -33,7 +33,6 @@ python main.py --dataset lerobot/aloha_sim_insertion_human
 ```sh
 pip install -r requirements.txt
 uvicorn app:app --reload
-
 ```
 ## Example datasets to explore:
 * `lerobot/aloha_sim_insertion_human`

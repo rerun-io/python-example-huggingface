@@ -1,3 +1,6 @@
+# This Dockerfile is used for crating the HuggingFace docker space
+# See: https://huggingface.co/docs/hub/en/spaces-sdks-docker
+
 FROM python:3.11.8
 
 # Set up a new user named "user" with user ID 1000

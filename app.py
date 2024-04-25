@@ -1,3 +1,12 @@
+"""
+A Gradio app that uses Rerun to visualize a Huggingface dataset.
+
+This app mounts the Gradio app inside of FastAPI in order to set the CORS headers.
+
+Run this from the terminal as you would normally start a FastAPI app: `uvicorn app:app`
+and navigate to http://localhost:8000 in your browser.
+"""
+
 from __future__ import annotations
 
 import urllib
@@ -79,7 +88,3 @@ with gr.Blocks() as demo:
 
 
 app = gr.mount_gradio_app(app, demo, path=CUSTOM_PATH)
-
-
-# Run this from the terminal as you would normally start a FastAPI app: `uvicorn run:app`
-# and navigate to http://localhost:8000 in your browser.

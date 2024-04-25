@@ -44,5 +44,16 @@ uvicorn app:app --reload
 * `nateraw/kitti`
 * `sayakpaul/nyu_depth_v2`
 
+## Deploying to HuggingFace
+
+HuggingFace space runs off of the head `main` branch pushed to: https://huggingface.co/spaces/rerun/preview_dataset/tree/main
+
+To update this from the rerun repository, add the HuggingFace repository as an additional remote,
+and then push to it.
+```sh
+git remote add huggingface git@hf.co:spaces/rerun/preview_dataset
+git push huggingface main
+```
+
 ## Note for the maintainer
 You can update this repository with the latest changes from https://github.com/rerun-io/rerun_template by running `scripts/template_update.py update --languages python`.

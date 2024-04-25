@@ -9,8 +9,8 @@ pinned: false
 license: mit
 ---
 
-# Rerun visualization of HuggingFace datasets
-Visualize HuggingFace datasets using [Rerun](https://www.rerun.io/).
+# Rerun visualization of Hugging Face datasets
+Visualize Hugging Face datasets using [Rerun](https://www.rerun.io/).
 
 Originally built for the LeRobot datasets:
 
@@ -19,7 +19,7 @@ Originally built for the LeRobot datasets:
 
 https://github.com/rerun-io/python-example-lerobot/assets/1148717/19e9983c-531f-4c48-9b37-37c5cbe1e0bd
 
-Deployed live on hugging-face: https://huggingface.co/spaces/rerun/preview_dataset
+Deployed live on Hugging Face: https://huggingface.co/spaces/rerun/preview_dataset
 
 ## Getting started (native)
 Requires Python 3.10 or higher.
@@ -44,11 +44,11 @@ uvicorn app:app --reload
 * `nateraw/kitti`
 * `sayakpaul/nyu_depth_v2`
 
-## Deploying to HuggingFace
+## Deploying to Hugging Face
 
-HuggingFace space runs off of the head `main` branch pushed to: https://huggingface.co/spaces/rerun/preview_dataset/tree/main
+Hugging Face space runs off of the head `main` branch pushed to: https://huggingface.co/spaces/rerun/preview_dataset/tree/main
 
-To update this from the rerun repository, add the HuggingFace repository as an additional remote,
+To update this from the rerun repository, add the Hugging Face repository as an additional remote,
 and then push to it.
 ```sh
 git remote add huggingface git@hf.co:spaces/rerun/preview_dataset

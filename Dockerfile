@@ -1,4 +1,4 @@
-# This Dockerfile is used for creating the HuggingFace docker space
+# This Dockerfile is used for creating the Hugging Face docker space
 # See: https://huggingface.co/docs/hub/en/spaces-sdks-docker
 
 FROM python:3.11.8

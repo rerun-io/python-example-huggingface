@@ -1,5 +1,5 @@
 """
-A Gradio app that uses Rerun to visualize a Huggingface dataset.
+A Gradio app that uses Rerun to visualize a Hugging Face dataset.
 
 This app mounts the Gradio app inside of FastAPI in order to set the CORS headers.
 

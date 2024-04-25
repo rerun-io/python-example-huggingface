@@ -1,5 +1,7 @@
 datasets
 h5py
+gradio==4.27.0
+gradio_huggingfacehub_search
 pillow
 rerun-sdk>=0.15.0,<0.16.0
 tqdm

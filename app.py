@@ -13,6 +13,7 @@ import urllib
 from pathlib import Path
 
 import gradio as gr
+import lerobot.common.datasets.video_utils
 import rerun as rr
 from datasets import load_dataset
 from fastapi import FastAPI

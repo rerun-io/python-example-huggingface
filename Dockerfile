@@ -22,6 +22,9 @@ RUN pip install --no-cache-dir --upgrade pip
 # Copy the current directory contents into the container at $HOME/app setting the owner to the user
 COPY --chown=user . $HOME/app
 
+# https://github.com/huggingface/lerobot/issues/105
+RUN pip install --no-cache-dir --upgrade cmake
+
 # Install requirements.txt
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 

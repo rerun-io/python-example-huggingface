@@ -13,14 +13,14 @@ import urllib
 from pathlib import Path
 
 import gradio as gr
-import lerobot.common.datasets.video_utils
 import rerun as rr
 from datasets import load_dataset
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from gradio_huggingfacehub_search import HuggingfaceHubSearch
+from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
 
-from dataset_conversion import log_dataset_to_rerun
+from dataset_conversion import log_dataset_to_rerun, log_lerobot_dataset_to_rerun
 
 CUSTOM_PATH = "/"
 
@@ -51,14 +51,17 @@ def show_dataset(dataset_id: str, episode_index: int) -> str:
 
         rr.save(filename.as_posix())
 
-        dataset = load_dataset(dataset_id, split="train", streaming=True)
+        if "/" in dataset_id and dataset_id.split("/")[0] == "lerobot":
+            dataset = LeRobotDataset(dataset_id)
+            log_lerobot_dataset_to_rerun(dataset, episode_index)
+        else:
+            dataset = load_dataset(dataset_id, split="train", streaming=True)
 
-        # This is for LeRobot datasets (https://huggingface.co/lerobot):
-        ds_subset = dataset.filter(
-            lambda frame: "episode_index" not in frame or frame["episode_index"] == episode_index
-        )
-
-        log_dataset_to_rerun(ds_subset)
+            # This is for LeRobot datasets (https://huggingface.co/lerobot):
+            ds_subset = dataset.filter(
+                lambda frame: "episode_index" not in frame or frame["episode_index"] == episode_index
+            )
+            log_dataset_to_rerun(ds_subset)
 
     return filename.as_posix()
 

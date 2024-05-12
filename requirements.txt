@@ -5,5 +5,6 @@ gradio_huggingfacehub_search
 pillow
 rerun-sdk>=0.15.0,<0.16.0
 tqdm
+cv2
 webdataset
 git+https://github.com/huggingface/lerobot@7bb5b15f4c0393ba16b73f6482611892301401d7#egg=lerobot

@@ -3,6 +3,9 @@
 
 FROM python:3.11.8
 
+# Dependencies for opencv
+RUN apt update && apt upgrade -y && apt install -y ffmpeg
+
 # Set up a new user named "user" with user ID 1000
 RUN useradd -m -u 1000 user
 

@@ -30,7 +30,6 @@ def get_frame(
         video_cache = {}
     if video_path not in video_cache:
         cap = cv2.VideoCapture(str(video_path))
-        print("new video!")
         frames = []
         while cap.isOpened():
             success, frame = cap.read()

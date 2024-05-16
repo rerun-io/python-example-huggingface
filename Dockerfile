@@ -3,6 +3,9 @@
 
 FROM python:3.11.8
 
+# Dependencies for opencv
+RUN apt update && apt upgrade -y && apt install -y ffmpeg
+
 # Set up a new user named "user" with user ID 1000
 RUN useradd -m -u 1000 user
 
@@ -21,6 +24,9 @@ RUN pip install --no-cache-dir --upgrade pip
 
 # Copy the current directory contents into the container at $HOME/app setting the owner to the user
 COPY --chown=user . $HOME/app
+
+# https://github.com/huggingface/lerobot/issues/105
+RUN pip install --no-cache-dir --upgrade cmake
 
 # Install requirements.txt
 RUN pip install --no-cache-dir --upgrade -r requirements.txt

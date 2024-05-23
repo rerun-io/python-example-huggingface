@@ -3,8 +3,8 @@ h5py
 gradio==4.27.0
 gradio_huggingfacehub_search
 pillow
-rerun-sdk>=0.15.0,<0.16.0
+rerun-sdk>=0.16.0,<0.17.0
 tqdm
 opencv-python
 webdataset
-git+https://github.com/huggingface/lerobot@7bb5b15f4c0393ba16b73f6482611892301401d7#egg=lerobot
+git+https://github.com/huggingface/lerobot@e67da1d7a665622c89d32cd2a58e3b4cc5fd6f4a#egg=lerobot
